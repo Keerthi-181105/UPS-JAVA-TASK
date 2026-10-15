@@ -1,23 +1,27 @@
+
 package demo;
 import java.util.Scanner;
+
 public class checkprime {
+    public static void main(String[] args) {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter a Number:");
-	    int n = sc.nextInt();
-	   
-	    for(int i = 2; i <= Math.sqrt(n); i++){
-	    if(n % i == 0){
-	     System.out.print("Not Prime Number");
-	     return;
-	    }
-	    else {
-	    	  System.out.print("Prime Number");
-	    }
-	    }
-	    sc.close();
-		
-	}
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a Number: ");
+        int n = sc.nextInt();
 
+        if (n <= 1) {
+            System.out.println("Not Prime Number");
+            return;
+        }
+
+        for (int i = 2; i*i <= n; i++) {
+            if (n % i == 0) {
+                System.out.println("Not Prime Number");
+                return;
+            }
+        }
+
+        System.out.println("Prime Number");
+        sc.close();
+    }
 }
